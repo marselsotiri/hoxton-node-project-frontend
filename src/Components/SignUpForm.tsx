@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
+import { signUp } from '../Pages/utils/api';
 
 const SignUpForm = () => {
     const { formData, onChange } = useForm({
@@ -8,7 +9,7 @@ const SignUpForm = () => {
         password: '',
         email: '',
         name: '',
-        photo:''
+        photo: '',
     });
     const navigate = useNavigate();
 
@@ -16,6 +17,13 @@ const SignUpForm = () => {
         <form
             onSubmit={(e) => {
                 e.preventDefault();
+                signUp(
+                    formData.password!,
+                    formData.email!,
+                    formData.name!,
+                    formData.phone!,
+                    formData.photo!
+                ).then();
             }}
             className='log_in'
         >

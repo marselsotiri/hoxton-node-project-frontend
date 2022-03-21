@@ -20,7 +20,7 @@ export function signUp(
     email: string,
     name: string,
     phone: string,
-    photo:string
+    photo: string
 ) {
     return fetch(`${url}/${signUpEndpoint}`, {
         method: 'POST',
@@ -30,9 +30,10 @@ export function signUp(
         body: JSON.stringify({
             password,
             email,
-            fullName:name,
+            fullName: name,
             phone,
-            photo
+            photo,
+            status: '',
         }),
     }).then((res) => res.json());
 }
