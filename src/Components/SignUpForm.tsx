@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { signUp } from '../Pages/utils/api';
+import { signUp } from '../utils/api';
 
 const SignUpForm = () => {
     const { formData, onChange } = useForm({

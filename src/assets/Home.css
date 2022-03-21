@@ -1,0 +1,80 @@
+section.home {
+    width: max-content;
+    min-width: 330px;
+    /* min-height: 80%; */
+    margin: auto;
+    border: 1px solid black;
+    /* background-color: rgb(36, 35, 35); */
+    display: grid;
+    align-content: flex-start;
+    /* padding: 2rem; */
+    /* gap: 3rem; */
+    border-radius: 10px;
+    /* color: white; */
+    overflow: hidden;
+}
+
+section.home header {
+    text-align: center;
+    background-color: rgb(54, 54, 54);
+}
+section.home header h2 {
+    color: white;
+    margin: 0.5rem;
+}
+section.home header input {
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+section.home header input::placeholder {
+    text-align: center;
+}
+
+button.new_convo {
+    height: 55px;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+ul.conversations {
+    list-style: none;
+    padding: 0;
+}
+ul.conversations h4 {
+    margin: 0.5rem 0;
+}
+
+ul.conversations li.conversation {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    padding-left: 0.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+ul span.last_msg {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+ul img.user_photo {
+    width: 100%;
+    margin: 0.5rem;
+}
+
+section.home_btns {
+    align-self: flex-end;
+    display: grid;
+    grid-auto-flow: column;
+    height: 40px;
+}
+section.home_btns button{
+    border: none;
+
+}

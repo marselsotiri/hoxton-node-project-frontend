@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { logIn } from '../Pages/utils/api';
+import { logIn } from '../utils/api';
 
 const LogInForm = () => {
     const { formData, onChange, changeInput } = useForm({
