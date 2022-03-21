@@ -14,3 +14,25 @@ export function logIn(password: string, emailOrPhone: string, value: string) {
         }),
     }).then((res) => res.json());
 }
+
+export function signUp(
+    password: string,
+    email: string,
+    name: string,
+    phone: string,
+    photo:string
+) {
+    return fetch(`${url}/${signUpEndpoint}`, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            password,
+            email,
+            fullName:name,
+            phone,
+            photo
+        }),
+    }).then((res) => res.json());
+}
