@@ -4,17 +4,66 @@ section.log_in {
     height: 80%;
     margin: auto;
     border: 1px solid black;
-background-color: rgb(36, 35, 35);
+    background-color: rgb(36, 35, 35);
     display: grid;
-    text-align: center;
+    align-content: flex-start;
     padding: 2rem;
+    gap: 3rem;
     border-radius: 10px;
     color: white;
 }
-section.log_in > h2{
+section.log_in > h2 {
     font-weight: 300;
+    text-align: center;
+    margin-top: 4rem;
+
 }
 
-form.log_in{
+form.log_in {
     display: grid;
+    gap: 2rem;
+}
+
+form.log_in label{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+form.log_in label input{
+    background-color: rgb(36, 35, 35);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+form.log_in span {
+    cursor: pointer;
+    margin-left: 1rem;
+    color: rgb(108, 108, 233);
+    font-weight: 500;
+}
+
+form.log_in button{
+    background-color: #29c003;
+    color: white;
+    border-radius: 12px;
+    padding: 1rem 3rem;
+    /* background-color: #30df04; */
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 6rem;
+}
+
+form.log_in button:hover {
+    background-color: #77e95b;
+}
+
+form #sign-up{
+    margin: 0;
 }

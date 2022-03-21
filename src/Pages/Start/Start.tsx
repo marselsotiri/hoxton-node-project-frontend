@@ -7,10 +7,10 @@ const Start = () => {
     return (
         <section className='start'>
             <section className='startBtns'>
-                <button onClick={(e) => navigate('log-in')} className='log_in'>
+                <button onClick={(e) => navigate('/log-in')} className='log_in'>
                     Log In
                 </button>
-                <button className='sign_up'>Sign Up</button>
+                <button onClick={(e) => navigate('/sign-up')} className='sign_up'>Sign Up</button>
             </section>
         </section>
     );
