@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 
 const SignUpForm = () => {
-    const { formData, onChange, changeInput } = useForm({
+    const { formData, onChange } = useForm({
         phone: '',
         password: '',
         email: '',
         name: '',
+        photo:''
     });
     const navigate = useNavigate();
 
@@ -24,7 +25,17 @@ const SignUpForm = () => {
                     onChange={onChange}
                     placeholder=''
                     type='text'
-                    name='Name'
+                    name='name'
+                    required
+                />
+            </label>
+            <label htmlFor='photo'>
+                Photo{' '}
+                <input
+                    onChange={onChange}
+                    placeholder='.jpg'
+                    type='text'
+                    name='photo'
                     required
                 />
             </label>
@@ -48,6 +59,7 @@ const SignUpForm = () => {
                     required
                 />
             </label>
+
             <label htmlFor='password'>
                 Password{' '}
                 <input
