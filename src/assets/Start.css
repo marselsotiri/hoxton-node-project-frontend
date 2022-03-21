@@ -1,5 +1,6 @@
 section.start {
     width: max-content;
+    min-width: 330px;
     height: 80%;
     margin: auto;
     border: 1px solid black;
@@ -31,7 +32,7 @@ section.startBtns > button {
 button.log_in {
     color: #29c003;
 }
-button.log_in:hover{
+button.log_in:hover {
     background-color: #bde6b2;
     /* color: white; */
 }
@@ -39,6 +40,6 @@ button.sign_up {
     background-color: #29c003;
     color: white;
 }
-button.sign_up:hover{
+button.sign_up:hover {
     background-color: #77e95b;
 }
