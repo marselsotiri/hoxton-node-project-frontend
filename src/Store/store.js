@@ -3,6 +3,8 @@ import create from 'zustand';
 export const useStore = create((set, get) => ({
     currentUser: null,
     setCurrentUser: (user) => set((state) => ({ currentUser: user })),
+    showSignUpError:false,
+    setShowSignUpError: (val) => set((state) => ({ showSignUpError: val })),
     products: [],
     setProducts: (products) => set((state) => ({ products: products })),
     updateQuantity: async (e, order, loggedUser,itemId) => {

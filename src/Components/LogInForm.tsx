@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import { logIn } from '../utils/api';
+//@ts-ignore
+import { useStore } from '../Store/store';
 
 const LogInForm = () => {
     const { formData, onChange, changeInput } = useForm({
@@ -9,7 +11,10 @@ const LogInForm = () => {
         password: '',
         email: '',
     });
+    const currentUser = useStore((store: any) => store.currentUser);
+
     const navigate = useNavigate();
+
 
     return (
         <form
@@ -24,7 +29,7 @@ const LogInForm = () => {
                     document.querySelector(`input[name=phone]`)
                         ? formData.phone!
                         : formData.email!
-                ).then()
+                ).then();
             }}
             className='log_in'
         >

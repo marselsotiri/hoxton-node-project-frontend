@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { signUp } from '../utils/api';
+import { signUp } from '../utils/api'; //@ts-ignore
+import { useStore } from '../Store/store';
 
 const SignUpForm = () => {
     const { formData, onChange } = useForm({
@@ -11,6 +12,9 @@ const SignUpForm = () => {
         name: '',
         photo: '',
     });
+    // const setShowSignUpError = useStore(
+    //     (store: any) => store.setShowSignUpError
+    // );
     const navigate = useNavigate();
 
     return (
@@ -24,6 +28,7 @@ const SignUpForm = () => {
                     formData.phone!,
                     formData.photo!
                 ).then();
+                // setShowSignUpError(true);
             }}
             className='log_in'
         >
@@ -35,6 +40,7 @@ const SignUpForm = () => {
                     type='text'
                     name='name'
                     required
+                    autoComplete='off'
                 />
             </label>
             <label htmlFor='photo'>
@@ -44,6 +50,7 @@ const SignUpForm = () => {
                     placeholder='.jpg'
                     type='text'
                     name='photo'
+                    autoComplete='off'
                     required
                 />
             </label>
@@ -55,6 +62,7 @@ const SignUpForm = () => {
                     type='number'
                     name='phone'
                     required
+                    autoComplete='off'
                 />
             </label>
             <label htmlFor='email'>
@@ -65,6 +73,7 @@ const SignUpForm = () => {
                     type='text'
                     name='email'
                     required
+                    autoComplete='off'
                 />
             </label>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../assets/Home.css';
+import HomeBtns from '../../Components/HomeBtns';
 
 const Home = () => {
     return (
@@ -64,7 +65,8 @@ const Home = () => {
                         <h4 className='chat_name'>Geri Luga</h4>
                         <span className='last_msg'>Last message</span>
                     </section>
-                </li> <li className='conversation'>
+                </li>{' '}
+                <li className='conversation'>
                     <img
                         src='https://avatars.dicebear.com/api/avataaars/geri.svg'
                         alt=''
@@ -74,7 +76,8 @@ const Home = () => {
                         <h4 className='chat_name'>Geri Luga</h4>
                         <span className='last_msg'>Last message</span>
                     </section>
-                </li> <li className='conversation'>
+                </li>{' '}
+                <li className='conversation'>
                     <img
                         src='https://avatars.dicebear.com/api/avataaars/geri.svg'
                         alt=''
@@ -84,7 +87,8 @@ const Home = () => {
                         <h4 className='chat_name'>Geri Luga</h4>
                         <span className='last_msg'>Last message</span>
                     </section>
-                </li> <li className='conversation'>
+                </li>{' '}
+                <li className='conversation'>
                     <img
                         src='https://avatars.dicebear.com/api/avataaars/geri.svg'
                         alt=''
@@ -96,18 +100,7 @@ const Home = () => {
                     </section>
                 </li>
             </ul>
-            <section className='home_btns'>
-                <button>Chat</button>
-                <button
-                    style={{
-                        borderLeft: '1px solid black',
-                        borderRight: '1px solid black',
-                    }}
-                >
-                    Contacts
-                </button>
-                <button>Profile</button>
-            </section>
+            <HomeBtns />
         </section>
     );
 };
