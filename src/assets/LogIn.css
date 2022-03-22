@@ -70,4 +70,5 @@ form #sign-up{
 
 p.error{
     color: red;
+    margin: 0;
 }

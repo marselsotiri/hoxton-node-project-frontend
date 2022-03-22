@@ -34,9 +34,9 @@ export function signUp(
             password,
             email,
             fullName: name,
-            phone,
-            photo,
-            status: '',
+            phoneNr:phone,
+            profilePhoto:photo,
+            userStatus: '',
         }),
     }).then((res) => res.json());
 }
