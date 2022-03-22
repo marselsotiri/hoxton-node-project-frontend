@@ -23,3 +23,7 @@ section.status{
     text-align: center;
     align-content: flex-start;
 }
+
+.status_input{
+    display: none;
+}

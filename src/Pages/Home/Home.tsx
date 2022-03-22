@@ -36,7 +36,7 @@ const Home = () => {
             </header>
             <button className='new_convo'>New Conversation</button>
             <ul className='conversations'>
-                {currentUser.conversations.map((conversation) => {
+                {/* {currentUser.conversations.map((conversation) => {
                     return (
                         <li className='conversation'>
                             <img
@@ -62,7 +62,8 @@ const Home = () => {
                             </section>
                         </li>
                     );
-                })}
+                })} */}
+                placeholder
             </ul>
             <HomeBtns />
         </section>

@@ -5,6 +5,7 @@ const loginEndpoint = '';
 const signUpEndpoint = '';
 const validationEndpoint = '';
 const usersEndpoint = ''
+const statusEndpoint = ''
 
 export function logIn(password: string, emailOrPhone: string, value: string) {
     return fetch(`${url}/${loginEndpoint}`, {
@@ -54,4 +55,14 @@ export function validate() {
 
 export function getAllUsers(){
     return fetch(`${url}/${usersEndpoint}`).then(res=>res.json())
+}
+
+export function updateStatus(newStatus:string){
+    return fetch(`${url}/${statusEndpoint}`,{
+        method:"PATCH",
+        headers:{
+            "Content-type":'application/json'
+        },
+        body:JSON.stringify({userStatus:newStatus})
+    }).then(res=>res.json())
 }
