@@ -1,6 +1,7 @@
 section.home {
     width: max-content;
     min-width: 404px;
+    max-width: 450px;
     height: 80%;
     margin: auto;
     border: 1px solid black;

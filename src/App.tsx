@@ -4,6 +4,7 @@ import './App.css';
 import Contacts from './Pages/Contacts/Contacts';
 import Home from './Pages/Home/Home';
 import LogIn from './Pages/LogIn/LogIn';
+import Profile from './Pages/Profile/Profile';
 import SignUp from './Pages/SignUp/SignUp';
 import Start from './Pages/Start/Start';
 
@@ -17,6 +18,7 @@ function App() {
                     <Route path='/sign-up' element={<SignUp />}></Route>
                     <Route path='/home' element={<Home />}></Route>
                     <Route path='/contacts' element={<Contacts />}></Route>
+                    <Route path='/profile' element={<Profile />}></Route>
 
                 </Routes>
             </main>

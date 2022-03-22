@@ -1,0 +1,25 @@
+img.profile_photo{
+    width: 100%;
+    height: 100%;
+}
+section.profile_info{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    grid-auto-rows: 100%;
+}
+
+section.home.profile{
+    display: grid;
+    grid-template-rows: auto 100px 1fr auto;
+}
+
+section.status{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-content: flex-start;
+}
