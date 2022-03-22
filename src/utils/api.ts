@@ -1,3 +1,5 @@
+import { getTokenFromStorage } from './helpers';
+
 const url = 'http://localhost:3009';
 const loginEndpoint = '';
 const signUpEndpoint = '';
@@ -43,11 +45,7 @@ export function validate() {
     return fetch(`${url}/${validationEndpoint}`, {
         method: 'GET',
         headers: {
-            authorization:
-                !window.localStorage.token ||
-                window.localStorage.token === 'undefined'
-                    ? null
-                    : window.localStorage.token,
+            authorization: getTokenFromStorage(),
         },
-    });
+    }).then(res=>res.json())
 }
