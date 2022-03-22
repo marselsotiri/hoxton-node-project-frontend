@@ -6,6 +6,8 @@ export const useStore = create((set, get) => ({
     showSignUpError:false,
     setShowSignUpError: (val) => set((state) => ({ showSignUpError: val })),
     showLogInError:false,
+    users:[],
+    setUsers:(val) => set((state) => ({ users: val })),
     setShowLogInError: (val) => set((state) => ({ showLogInError: val })),
     products: [],
     setProducts: (products) => set((state) => ({ products: products })),

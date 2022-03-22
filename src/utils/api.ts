@@ -4,6 +4,7 @@ const url = 'http://localhost:3009';
 const loginEndpoint = '';
 const signUpEndpoint = '';
 const validationEndpoint = '';
+const usersEndpoint = ''
 
 export function logIn(password: string, emailOrPhone: string, value: string) {
     return fetch(`${url}/${loginEndpoint}`, {
@@ -48,4 +49,9 @@ export function validate() {
             authorization: getTokenFromStorage(),
         },
     }).then(res=>res.json())
+}
+
+
+export function getAllUsers(){
+    return fetch(`${url}/${usersEndpoint}`).then(res=>res.json())
 }
