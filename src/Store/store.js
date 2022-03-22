@@ -5,6 +5,8 @@ export const useStore = create((set, get) => ({
     setCurrentUser: (user) => set((state) => ({ currentUser: user })),
     showSignUpError:false,
     setShowSignUpError: (val) => set((state) => ({ showSignUpError: val })),
+    showLogInError:false,
+    setShowLogInError: (val) => set((state) => ({ showLogInError: val })),
     products: [],
     setProducts: (products) => set((state) => ({ products: products })),
     updateQuantity: async (e, order, loggedUser,itemId) => {

@@ -67,3 +67,7 @@ form.log_in button:hover {
 form #sign-up{
     margin: 0;
 }
+
+p.error{
+    color: red;
+}

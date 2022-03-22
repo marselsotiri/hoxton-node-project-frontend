@@ -15,6 +15,7 @@ const LogInForm = () => {
     const setCurrentUser = useStore((store: any) => store.setCurrentUser);
 
     const currentUser = useStore((store: any) => store.currentUser);
+    const setShowLogInError = useStore((store: any) => store.setShowLogInError);
 
     const navigate = useNavigate();
 
@@ -32,7 +33,13 @@ const LogInForm = () => {
                         ? formData.phone!
                         : formData.email!
                 ).then((data) => {
-                    if (data.error) return;
+                    if (data.error) {
+                        setShowLogInError(true)
+                        setTimeout(e=>{
+                            setShowLogInError(false)
+                        },2000)
+                        return;
+                    }
                     setCurrentUser(data.user);
                     setTokenInStorage(data.token);
                     navigate('/home');
