@@ -17,7 +17,7 @@ export function logIn(password: string, emailOrPhone: string, value: string) {
         },
         body: JSON.stringify({
             password,
-            [emailOrPhone]: value,
+            [emailOrPhone==='email'?'email':'phoneNr']: value,
         }),
     }).then((res) => res.json());
 }

@@ -23,13 +23,14 @@ const Conversation = () => {
         });
     }, []);
 
-   
-    
     if (!currentUser) return <h2>Loading...</h2>;
 
     const currentConversation = currentUser.conversations.find(
-        (conv) => conv.id === Number(params.id)
+        (conv) =>
+            conv.userId === Number(params.id) ||
+            conv.participantId === Number(params.id)
     );
+    if (!currentConversation) return <h2>Not found</h2>;
     return (
         <section className='single_convo'>
             <header className='conversation_header'>
@@ -40,9 +41,15 @@ const Conversation = () => {
                 >
                     ◀
                 </button>
-                <img className='conversation_profile_photo' src={currentConversation?.userId === currentUser.id
-                        ? currentConversation.partecipant?.profilePhoto
-                        : currentConversation?.user?.profilePhoto} alt="" />
+                <img
+                    className='conversation_profile_photo'
+                    src={
+                        currentConversation?.userId === currentUser.id
+                            ? currentConversation.partecipant?.profilePhoto
+                            : currentConversation?.user?.profilePhoto
+                    }
+                    alt=''
+                />
                 <h3 className='conversation_name'>
                     {currentConversation?.userId === currentUser.id
                         ? currentConversation.partecipant?.fullName
@@ -65,18 +72,32 @@ const Conversation = () => {
                         </li>
                     );
                 })}
-            </ul><form onSubmit={e=>{
-                e.preventDefault()
-                //@ts-ignore
-                createMessage(currentUser.id,currentConversation?.id,e.target.message.value).then(data=>{
-                    if(data.error)return
-                    setCurrentUser(data)
-                    window.scrollTo(0, document.body.scrollHeight);
+            </ul>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
                     //@ts-ignore
-                    e.target.reset()
-                })
-            }}>
-            <input name='message'  className='message_input' type="text" />
+                    createMessage(
+                        currentUser.id,
+                        currentConversation?.id,
+                        //@ts-ignore
+                        e.target.message.value
+                    ).then((data) => {
+                        if (data.error) return;
+                        setCurrentUser(data);
+                        document
+                            .querySelector('ul.conversation')!
+                            .scrollTo(
+                                0,
+                                document.querySelector('ul.conversation')!
+                                    .scrollHeight
+                            );
+                        //@ts-ignore
+                        e.target.reset();
+                    });
+                }}
+            >
+                <input name='message' className='message_input' type='text' />
             </form>
             <HomeBtns />
         </section>

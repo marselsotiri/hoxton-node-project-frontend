@@ -24,13 +24,16 @@ const Contacts = () => {
         });
     }, []);
 
-    const usersIhaventTalkedTo = users.filter(
-        (user) =>
-            !currentUser.conversations.find(
-                (convo) =>
-                    convo.participantId === user.id || convo.userId === user.id
-            )
-    ).filter(user=>user.id!==currentUser.id)
+    const usersIhaventTalkedTo = users
+        .filter(
+            (user) =>
+                !currentUser.conversations.find(
+                    (convo) =>
+                        convo.participantId === user.id ||
+                        convo.userId === user.id
+                )
+        )
+        .filter((user) => user.id !== currentUser.id);
 
     if (!currentUser) return <h2>Loading...</h2>;
 
@@ -44,12 +47,14 @@ const Contacts = () => {
                     return (
                         <li
                             onClick={(e) => {
-                                createConversation(currentUser.id,user.id).then(data=>{
-                                    if(data.error)return
-                                    setCurrentUser(data)
-                                    navigate('/conversation/' + currentUser.conversations[currentUser.conversations.length-1].id);
-                                })
-                                
+                                createConversation(
+                                    currentUser.id,
+                                    user.id
+                                ).then((data) => {
+                                    if (data.error) return;
+                                    setCurrentUser(data);
+                                    navigate('/conversation/' + user.id);
+                                });
                             }}
                             key={user.id}
                             className='conversation'

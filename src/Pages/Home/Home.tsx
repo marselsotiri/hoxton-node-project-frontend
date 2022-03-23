@@ -46,7 +46,7 @@ const Home = () => {
                     return (
                         <li
                             onClick={(e) =>
-                                navigate(`/conversation/${conversation.id}`)
+                                navigate(`/conversation/${conversation.userId===currentUser.id?conversation.participantId:conversation.userId}`)
                             }
                             key={conversation.id}
                             className='conversation'
