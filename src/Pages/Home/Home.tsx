@@ -44,7 +44,13 @@ const Home = () => {
             <ul className='conversations'>
                 {currentUser.conversations.map((conversation) => {
                     return (
-                        <li key={conversation.id} className='conversation'>
+                        <li
+                            onClick={(e) =>
+                                navigate(`/conversation/${conversation.id}`)
+                            }
+                            key={conversation.id}
+                            className='conversation'
+                        >
                             <img
                                 src={
                                     conversation.userId === currentUser.id

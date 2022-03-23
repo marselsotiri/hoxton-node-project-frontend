@@ -62,6 +62,10 @@ ul.conversations li.conversation {
     padding-left: 0.5rem;
     gap: 1rem;
     border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+ul.conversations li.conversation:hover{
+    background-color: #bde6b2;
 }
 
 ul span.last_msg {

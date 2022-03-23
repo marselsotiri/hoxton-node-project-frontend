@@ -4,7 +4,7 @@ import HomeBtns from '../../Components/HomeBtns';
 //@ts-ignore
 import { useStore } from '../../Store/store';
 import { UserI } from '../../types';
-import { getAllUsers, validate } from '../../utils/api';
+import { createConversation, getAllUsers, validate } from '../../utils/api';
 
 const Contacts = () => {
     const users: UserI[] = useStore((store: any) => store.users);
@@ -12,7 +12,6 @@ const Contacts = () => {
     const setCurrentUser = useStore((store: any) => store.setCurrentUser);
     const setUsers = useStore((store: any) => store.setUsers);
     const currentUser: UserI = useStore((store: any) => store.currentUser);
-
 
     useEffect(() => {
         validate().then((data) => {
@@ -25,7 +24,15 @@ const Contacts = () => {
         });
     }, []);
 
-    if (!currentUser) return <h2>Loading...</h2>
+    const usersIhaventTalkedTo = users.filter(
+        (user) =>
+            !currentUser.conversations.find(
+                (convo) =>
+                    convo.participantId === user.id || convo.userId === user.id
+            )
+    );
+
+    if (!currentUser) return <h2>Loading...</h2>;
 
     return (
         <section className='home'>
@@ -33,9 +40,20 @@ const Contacts = () => {
                 <h2>Contacts</h2>
             </header>
             <ul className='conversations'>
-                {users.map((user) => {
+                {usersIhaventTalkedTo.map((user) => {
                     return (
-                        <li className='conversation'>
+                        <li
+                            onClick={(e) => {
+                                createConversation(currentUser.id,user.id).then(data=>{
+                                    if(data.error)return
+                                    setCurrentUser(data)
+                                    navigate('/conversation/' + user.id);
+                                })
+                                
+                            }}
+                            key={user.id}
+                            className='conversation'
+                        >
                             <img
                                 src={user.profilePhoto}
                                 alt=''

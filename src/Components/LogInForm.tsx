@@ -34,10 +34,10 @@ const LogInForm = () => {
                         : formData.email!
                 ).then((data) => {
                     if (data.error) {
-                        setShowLogInError(true)
-                        setTimeout(()=>{
-                            setShowLogInError(false)
-                        },2000)
+                        setShowLogInError(true);
+                        setTimeout(() => {
+                            setShowLogInError(false);
+                        }, 2000);
                         return;
                     }
                     setCurrentUser(data.user);
