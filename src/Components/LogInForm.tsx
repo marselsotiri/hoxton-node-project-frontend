@@ -35,7 +35,7 @@ const LogInForm = () => {
                 ).then((data) => {
                     if (data.error) {
                         setShowLogInError(true)
-                        setTimeout(e=>{
+                        setTimeout(()=>{
                             setShowLogInError(false)
                         },2000)
                         return;

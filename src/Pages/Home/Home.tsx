@@ -35,11 +35,16 @@ const Home = () => {
                 <h2>WeChat</h2>
                 <input placeholder='Search' type='text' />
             </header>
-            <button className='new_convo'>New Conversation</button>
+            <button
+                onClick={(e) => navigate('/contacts')}
+                className='new_convo'
+            >
+                New Conversation
+            </button>
             <ul className='conversations'>
                 {currentUser.conversations.map((conversation) => {
                     return (
-                        <li className='conversation'>
+                        <li key={conversation.id} className='conversation'>
                             <img
                                 src={
                                     conversation.userId === currentUser.id
