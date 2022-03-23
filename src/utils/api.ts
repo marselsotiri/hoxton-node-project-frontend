@@ -1,6 +1,6 @@
 import { getTokenFromStorage } from './helpers';
 
-const url = 'http://localhost:4000';
+const url = 'https://phrygian-granite-stool.glitch.me';
 const loginEndpoint = 'login';
 const signUpEndpoint = 'sign-up';
 const validationEndpoint = 'validate';
@@ -17,7 +17,7 @@ export function logIn(password: string, emailOrPhone: string, value: string) {
         },
         body: JSON.stringify({
             password,
-            [emailOrPhone==='email'?'email':'phoneNr']: value,
+            [emailOrPhone === 'email' ? 'email' : 'phoneNr']: value,
         }),
     }).then((res) => res.json());
 }
