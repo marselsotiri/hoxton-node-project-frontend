@@ -4,10 +4,10 @@ const url = 'http://localhost:4000';
 const loginEndpoint = 'login';
 const signUpEndpoint = 'sign-up';
 const validationEndpoint = 'validate';
-const usersEndpoint = '';
-const statusEndpoint = '';
-const messageEndpoint = '';
-const conversationEndpoint = '';
+const usersEndpoint = 'users';
+const statusEndpoint = 'status';
+const messageEndpoint = 'messages';
+const conversationEndpoint = 'conversations';
 
 export function logIn(password: string, emailOrPhone: string, value: string) {
     return fetch(`${url}/${loginEndpoint}`, {

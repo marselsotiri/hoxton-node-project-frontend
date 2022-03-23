@@ -71,6 +71,7 @@ const Conversation = () => {
                 createMessage(currentUser.id,currentConversation?.id,e.target.message.value).then(data=>{
                     if(data.error)return
                     setCurrentUser(data)
+                    window.scrollTo(0, document.body.scrollHeight);
                 })
             }}>
             <input name='message'  className='message_input' type="text" />
