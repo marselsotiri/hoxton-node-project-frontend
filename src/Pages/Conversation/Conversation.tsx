@@ -72,6 +72,8 @@ const Conversation = () => {
                     if(data.error)return
                     setCurrentUser(data)
                     window.scrollTo(0, document.body.scrollHeight);
+                    //@ts-ignore
+                    e.target.reset()
                 })
             }}>
             <input name='message'  className='message_input' type="text" />

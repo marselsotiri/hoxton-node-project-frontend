@@ -14,7 +14,7 @@ ul.conversation li {
     padding: 0.5rem;
     color: white;
     margin: 1rem 0rem;
-    
+    overflow-wrap: break-word;
 }
 
 ul.conversation li.sender {
@@ -22,6 +22,7 @@ ul.conversation li.sender {
     background-color: green;
     width: max-content;
     justify-self: end;
+  
 }
 
 ul.conversation li.receiver {

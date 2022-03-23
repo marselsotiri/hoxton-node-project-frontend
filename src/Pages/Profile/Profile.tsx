@@ -54,10 +54,7 @@ const Profile = () => {
                     }}
                     className='status'
                 >
-                    {
-                        // currentUser.userStatus||
-                        'This is my status'
-                    }
+                    {currentUser.userStatus || 'This is my status'}
                 </p>
                 <input
                     onBlur={(e) => {
@@ -90,7 +87,7 @@ const Profile = () => {
                 <button
                     onClick={(e) => {
                         setCurrentUser(null);
-                        removeTokenFromStorage()
+                        removeTokenFromStorage();
                         navigate('/');
                     }}
                 >

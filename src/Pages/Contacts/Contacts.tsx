@@ -30,7 +30,7 @@ const Contacts = () => {
                 (convo) =>
                     convo.participantId === user.id || convo.userId === user.id
             )
-    );
+    ).filter(user=>user.id!==currentUser.id)
 
     if (!currentUser) return <h2>Loading...</h2>;
 
@@ -47,7 +47,7 @@ const Contacts = () => {
                                 createConversation(currentUser.id,user.id).then(data=>{
                                     if(data.error)return
                                     setCurrentUser(data)
-                                    navigate('/conversation/' + user.id);
+                                    navigate('/conversation/' + currentUser.conversations[currentUser.conversations.length-1].id);
                                 })
                                 
                             }}

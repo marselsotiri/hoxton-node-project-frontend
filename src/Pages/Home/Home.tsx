@@ -55,20 +55,22 @@ const Home = () => {
                                 src={
                                     conversation.userId === currentUser.id
                                         ? conversation.partecipant?.profilePhoto
-                                        : currentUser.profilePhoto
+                                        : conversation.user?.profilePhoto
                                 }
                                 alt=''
                                 className='user_photo'
                             />
                             <section className='conversation_info'>
                                 <h4 className='chat_name'>
-                                    {conversation.partecipant?.fullName}
+                                    {conversation.userId === currentUser.id
+                                        ? conversation.partecipant?.fullName
+                                        : conversation.user?.fullName}
                                 </h4>
                                 <span className='last_msg'>
                                     {
                                         conversation.messages[
                                             conversation.messages.length - 1
-                                        ].textMessage
+                                        ]?.textMessage
                                     }
                                 </span>
                             </section>
