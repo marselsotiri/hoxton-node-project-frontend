@@ -19,6 +19,7 @@ const SignUpForm = () => {
     const navigate = useNavigate();
     const showSignUpError = useStore((store: any) => store.showSignUpError);
     const setCurrentUser = useStore((store: any) => store.setCurrentUser);
+    
 
     return (
         <form

@@ -11,6 +11,8 @@ const Contacts = () => {
     const navigate = useNavigate();
     const setCurrentUser = useStore((store: any) => store.setCurrentUser);
     const setUsers = useStore((store: any) => store.setUsers);
+    const currentUser: UserI = useStore((store: any) => store.currentUser);
+
 
     useEffect(() => {
         validate().then((data) => {
@@ -18,12 +20,12 @@ const Contacts = () => {
                 navigate('/');
                 return;
             }
-            setCurrentUser(data.user);
+            setCurrentUser(data);
             getAllUsers().then(setUsers);
         });
     }, []);
 
-    // if (!currentUser) return <h2>Loading...</h2>;uncomment this, not the one above
+    if (!currentUser) return <h2>Loading...</h2>
 
     return (
         <section className='home'>

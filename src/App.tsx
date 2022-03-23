@@ -19,7 +19,7 @@ function App() {
                     <Route path='/home' element={<Home />}></Route>
                     <Route path='/contacts' element={<Contacts />}></Route>
                     <Route path='/profile' element={<Profile />}></Route>
-
+                    <Route path='*' element={<h1>Not found</h1>} />
                 </Routes>
             </main>
         </>

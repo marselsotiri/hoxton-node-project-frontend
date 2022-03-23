@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import SignUpForm from '../../Components/SignUpForm';
 //@ts-ignore
 import { useStore } from '../../Store/store';
+import { UserI } from '../../types';
 import { validate } from '../../utils/api';
 
 const SignUp = () => {
     const setCurrentUser = useStore((store: any) => store.setCurrentUser);
     const navigate = useNavigate();
+    const currentUser: UserI = useStore((store: any) => store.currentUser);
+
 
     useEffect(() => {
         validate().then((data) => {
@@ -16,6 +19,10 @@ const SignUp = () => {
             navigate('/home');
         });
     }, []);
+    // useEffect(() => {
+    //     if(currentUser)navigate('/home');
+    // }, [currentUser])
+    
 
     return (
         <section className='log_in'>

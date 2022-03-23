@@ -6,6 +6,7 @@ import { useStore } from '../../Store/store';
 import { useNavigate } from 'react-router-dom';
 import { updateStatus, validate } from '../../utils/api';
 import { UserI } from '../../types';
+import { removeTokenFromStorage } from '../../utils/helpers';
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -18,11 +19,11 @@ const Profile = () => {
                 navigate('/');
                 return;
             }
-            setCurrentUser(data.user);
+            setCurrentUser(data);
         });
     }, []);
 
-    // if (!currentUser) return <h2>Loading...</h2>
+    if (!currentUser) return <h2>Loading...</h2>;
 
     return (
         <section className='home profile'>
@@ -30,7 +31,7 @@ const Profile = () => {
                 <h2>Profile</h2>
             </header>
             <section className='profile_info'>
-                {/* <img
+                <img
                     className='profile_photo'
                     src={currentUser.profilePhoto}
                     alt=''
@@ -38,7 +39,7 @@ const Profile = () => {
                 <h3>{currentUser.fullName}</h3>
             </section>
             <section className='status'>
-                <h3> Status</h3> */}
+                <h3> Status</h3>
                 <p
                     onClick={(e) => {
                         //@ts-ignore
@@ -86,6 +87,15 @@ const Profile = () => {
                     type='text'
                     className='status_input'
                 />
+                <button
+                    onClick={(e) => {
+                        setCurrentUser(null);
+                        removeTokenFromStorage()
+                        navigate('/');
+                    }}
+                >
+                    Sign out
+                </button>
             </section>
             <HomeBtns />
         </section>

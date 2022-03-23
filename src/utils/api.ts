@@ -1,9 +1,9 @@
 import { getTokenFromStorage } from './helpers';
 
-const url = 'http://localhost:3009';
-const loginEndpoint = '';
-const signUpEndpoint = '';
-const validationEndpoint = '';
+const url = 'http://localhost:4000';
+const loginEndpoint = 'login';
+const signUpEndpoint = 'sign-up';
+const validationEndpoint = 'validate';
 const usersEndpoint = ''
 const statusEndpoint = ''
 

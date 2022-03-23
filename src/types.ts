@@ -14,7 +14,7 @@ export interface ConversationI {
     userId?: number;
     participantId?: number;
     user?: UserI;
-    participant?: UserI;
+    partecipant?: UserI;
     messages: MessageI[];
 }
 

@@ -18,7 +18,8 @@ const Home = () => {
                 navigate('/');
                 return;
             }
-            setCurrentUser(data.user);
+
+            setCurrentUser(data);
         });
     }, []);
 
@@ -26,7 +27,7 @@ const Home = () => {
     //     if (!currentUser) navigate('/');
     // }, []);
 
-    // if (!currentUser) return <h2>Loading...</h2>;uncomment this, not the one above
+    if (!currentUser) return <h2>Loading...</h2>;
 
     return (
         <section className='home'>
@@ -36,13 +37,13 @@ const Home = () => {
             </header>
             <button className='new_convo'>New Conversation</button>
             <ul className='conversations'>
-                {/* {currentUser.conversations.map((conversation) => {
+                {currentUser.conversations.map((conversation) => {
                     return (
                         <li className='conversation'>
                             <img
                                 src={
                                     conversation.userId === currentUser.id
-                                        ? conversation.participant?.profilePhoto
+                                        ? conversation.partecipant?.profilePhoto
                                         : currentUser.profilePhoto
                                 }
                                 alt=''
@@ -50,7 +51,7 @@ const Home = () => {
                             />
                             <section className='conversation_info'>
                                 <h4 className='chat_name'>
-                                    {conversation.participant?.fullName}
+                                    {conversation.partecipant?.fullName}
                                 </h4>
                                 <span className='last_msg'>
                                     {
@@ -62,8 +63,7 @@ const Home = () => {
                             </section>
                         </li>
                     );
-                })} */}
-                placeholder
+                })}
             </ul>
             <HomeBtns />
         </section>
