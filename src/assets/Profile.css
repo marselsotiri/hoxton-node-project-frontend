@@ -1,6 +1,8 @@
 img.profile_photo{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 section.profile_info{
     display: grid;
@@ -10,6 +12,7 @@ section.profile_info{
     padding: 1rem;
     border-bottom: 1px solid black;
     grid-auto-rows: 100%;
+    height: 80px;
 }
 
 section.home.profile{

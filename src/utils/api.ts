@@ -1,6 +1,6 @@
 import { getTokenFromStorage } from './helpers';
 
-const url = 'https://phrygian-granite-stool.glitch.me';
+const url = 'http://localhost:4000';
 const loginEndpoint = 'login';
 const signUpEndpoint = 'sign-up';
 const validationEndpoint = 'validate';
