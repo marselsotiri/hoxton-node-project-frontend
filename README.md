@@ -2,7 +2,7 @@
 # We Chat
 
 We Chat is a communication app wich is recreated by me and one of my peers.
-You can send and recive text messages.
+You can send and recive text messages there.
 
 
 ## Run Locally
